@@ -1,0 +1,35 @@
+<html>
+<head>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+<script type='text/javascript'>
+$(window).load(function(){
+$("#ktp").change(function() {
+			console.log($("#ktp option:selected").val());
+			if ($("#ktp option:selected").val() == 'Baru') {
+				$('#no_pol').prop('hidden', 'true');
+			} else {
+				$('#no_pol').prop('hidden', false);
+                $('#warna').prop('hidden', false);
+                $('#no_rang').prop('hidden', false);
+                $('#no_mesin').prop('hidden', false);
+                $('#no_seri').prop('hidden', false);
+			}
+		});
+});
+</script>
+</head>
+<body>
+  <label style="margin:20px;">
+	KTP : <br />
+	<select id="ktp" name="ktp" style="margin-left:20px;">
+		<option value="Baru">Baru</option>
+		<option value="Bekas">Bekas</option>
+	</select>
+    <input type="text" name="no_pol" id="no_pol" value="" hidden />
+    <input type="text" name="warna" id="warna" value="" hidden />
+    <input type="text" name="no_rang" id="no_rang" value="" hidden />
+    <input type="text" name="no_mesin" id="no_mesin" value="" hidden />
+    <input type="text" name="no_seri" id="no_seri" value="" hidden />
+</label>
+</body>
+</html>
